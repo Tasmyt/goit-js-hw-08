@@ -26,7 +26,7 @@ function populateData() {
 }
 
 function onSubmit(evt) {
-  console.log({ email: form.email.value, message: form.message });
+  console.log({ email: form.email.value, message: form.message.value });
   evt.preventDefault();
   evt.target.reset();
   localStorage.removeItem('FEEDBACK_FORM_STATE');
