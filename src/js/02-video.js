@@ -5,10 +5,10 @@ const CURRENT_KEY = 'videoplayer-current-time';
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
-const onTimeupdate = function(data) {
-    const seconds = data.seconds;
-    console.log(seconds);
-    localStorage.setItem(CURRENT_KEY, JSON.stringify(seconds));
+const onTimeupdate = function (data) {
+  const seconds = data.seconds;
+  console.log(seconds);
+  localStorage.setItem(CURRENT_KEY, JSON.stringify(seconds));
 };
 
 player.on('timeupdate', throttle(onTimeupdate, 1000));
