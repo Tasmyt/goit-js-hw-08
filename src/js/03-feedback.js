@@ -20,8 +20,8 @@ function populateData() {
   );
 
   if (savedMessage) {
-    form.email.value = savedMessage.email;
-    form.message.value = savedMessage.message;
+    form.email.value = savedMessage.email || '';
+    form.message.value = savedMessage.message || '';
   }
   
 
