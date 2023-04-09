@@ -19,8 +19,6 @@ function populateData() {
     localStorage.getItem('FEEDBACK_FORM_STATE', formData)
   );
 
-  console.log(savedMessage.email);
-
   if (savedMessage.email != undefined) {
     form.email.value = savedMessage.email;
   }
