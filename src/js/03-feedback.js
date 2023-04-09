@@ -19,20 +19,19 @@ function populateData() {
     localStorage.getItem('FEEDBACK_FORM_STATE', formData)
   );
 
-  if (savedMessage.email != undefined) {
+  if (savedMessage) {
     form.email.value = savedMessage.email;
-  }
-
-  if (savedMessage.message != undefined) {
     form.message.value = savedMessage.message;
   }
+  
+
 }
 
 function onSubmit(evt) {
-  console.log({ email: form.email.value, message: form.message.value });
+  console.log({ email: form.email.value, message: form.message.value});
   evt.preventDefault();
 
-  if (form.email.value === '' || form.message.value === '') {
+if (form.email.value === '' || form.message.value === '') {
     return alert('Please fill in all fields!');
   }
   evt.target.reset();
