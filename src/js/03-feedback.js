@@ -6,6 +6,8 @@ const form = document.querySelector('.feedback-form');
 populateData();
 
 form.addEventListener('input', throttle(onFormInput, 500));
+
+
 form.addEventListener('submit', onSubmit);
 
 function onFormInput(evt) {
@@ -19,11 +21,9 @@ function populateData() {
     localStorage.getItem('FEEDBACK_FORM_STATE', formData)
   );
   
-
-
 if (savedMessage) {
-    form.email.value = savedMessage.email || '';
-    form.message.value = savedMessage.message || '';
+    form.email.value = savedMessage.email ?? '';
+    form.message.value = savedMessage.message ?? '';
   }
 
 }
@@ -39,5 +39,4 @@ if (form.email.value === '' || form.message.value === '') {
 
   localStorage.removeItem('FEEDBACK_FORM_STATE');
 
-  // formData = {};
 }
