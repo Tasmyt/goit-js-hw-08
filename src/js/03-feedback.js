@@ -7,7 +7,6 @@ populateData();
 
 form.addEventListener('input', throttle(onFormInput, 500));
 
-
 form.addEventListener('submit', onSubmit);
 
 function onFormInput(evt) {
@@ -20,23 +19,21 @@ function populateData() {
   const savedMessage = JSON.parse(
     localStorage.getItem('FEEDBACK_FORM_STATE', formData)
   );
-  
-if (savedMessage) {
+
+  if (savedMessage) {
     form.email.value = savedMessage.email ?? '';
     form.message.value = savedMessage.message ?? '';
   }
-
 }
 
 function onSubmit(evt) {
-  console.log({ email: form.email.value, message: form.message.value});
+  console.log({ email: form.email.value, message: form.message.value });
   evt.preventDefault();
 
-if (form.email.value === '' || form.message.value === '') {
+  if (form.email.value === '' || form.message.value === '') {
     return alert('Please fill in all fields!');
   }
   evt.target.reset();
 
   localStorage.removeItem('FEEDBACK_FORM_STATE');
-
 }
