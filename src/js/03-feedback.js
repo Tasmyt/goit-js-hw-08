@@ -19,11 +19,13 @@ function populateData() {
     localStorage.getItem('FEEDBACK_FORM_STATE', formData)
   );
 
-  if (savedMessage.email != null) {
+  console.log(savedMessage.email);
+
+  if (savedMessage.email != undefined) {
     form.email.value = savedMessage.email;
   }
 
-  if (savedMessage.message) {
+  if (savedMessage.message != undefined) {
     form.message.value = savedMessage.message;
   }
 }
