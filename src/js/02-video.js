@@ -11,10 +11,11 @@ const onTimeupdate = function (data) {
   localStorage.setItem(CURRENT_KEY, JSON.stringify(seconds));
 };
 
-player.on('play', function () {
-        console.log('played the video!');}
-);
+// player.on('play', function () {
+//         console.log('played the video!');}
+// );
 
 player.on('timeupdate', throttle(onTimeupdate, 1000));
 
+if (localStorage)
 player.setCurrentTime(JSON.parse(localStorage.getItem(CURRENT_KEY)));
