@@ -11,10 +11,8 @@ const onTimeupdate = function (data) {
   localStorage.setItem(CURRENT_KEY, JSON.stringify(seconds));
 };
 
-player.on('play'
-//   , function () {
-//         console.log('played the video!');
-// }
+player.on('play', function () {
+        console.log('played the video!');}
 );
 
 player.on('timeupdate', throttle(onTimeupdate, 1000));
