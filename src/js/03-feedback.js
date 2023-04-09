@@ -18,12 +18,13 @@ function populateData() {
   const savedMessage = JSON.parse(
     localStorage.getItem('FEEDBACK_FORM_STATE', formData)
   );
+  
 
-  if (savedMessage) {
+
+if (savedMessage) {
     form.email.value = savedMessage.email || '';
     form.message.value = savedMessage.message || '';
   }
-  
 
 }
 
