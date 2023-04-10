@@ -36,4 +36,5 @@ function onSubmit(evt) {
   evt.target.reset();
 
   localStorage.removeItem('FEEDBACK_FORM_STATE');
+  formData = {};
 }
